@@ -22,16 +22,7 @@ public class SpringBootProjectApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		list = Arrays.asList("aman","ankit","abhishek", "aritya", "amit");
+		list = Arrays.asList("Parakh Chaudhary","Niloy Chakravorty","Pallab De","Mohommad Faizan");
 	}
 
-//	@GetMapping
-//	public List<String> getNames(){
-//		return  list.stream().map(a -> a.toUpperCase()).collect(Collectors.toList());
-//	}
-//
-//	@GetMapping("/{name}")
-//	public String greetings(@PathVariable String name){
-//		return "<h1 style='color: solidorange;'>Welcome, <strong>"+name.toUpperCase()+"</strong></h1>";
-//	}
 }

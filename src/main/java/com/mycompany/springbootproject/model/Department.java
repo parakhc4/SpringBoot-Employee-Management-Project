@@ -9,13 +9,11 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "prod_tbl")
-public class Product{
+@Table(name = "deptTable")
+public class Department{
     @Id
-    @Column(name = "id", nullable = false)
-    private Integer id;
-    private String pname;
-    private int qty;
-    private int price;
+    @Column(name = "departId", nullable = false)
+    private int departId;
+    private String departName;
 
 }

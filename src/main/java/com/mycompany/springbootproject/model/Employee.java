@@ -7,13 +7,15 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "cg_customers")
-public class Customer {
+@Table(name = "empTable")
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -23,16 +25,17 @@ public class Customer {
     @Size(min = 2, max = 20)
     @NotNull(message = "Pls Enter Last Name!")
     private String lastName;
-    @NotNull(message = "Pls Enter Full Address!")
-    private String address;
+    
     @NotNull(message = "Pls Enter Email")
     @Email
     private String email;
     @NotNull
-    private long mobile;
+    private LocalDate dob;
+    //Employee Email
 
-    @OneToMany(targetEntity = Product.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "cp_fk", referencedColumnName = "id")
-    private List<Product> productList;
+
+    @ManyToOne(targetEntity = Department.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "deptTable", referencedColumnName = "departId")
+    private Department department;
 
 }
